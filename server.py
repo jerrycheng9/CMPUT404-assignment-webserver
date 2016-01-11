@@ -1,5 +1,6 @@
 #  coding: utf-8 
 import SocketServer
+import os
 
 # Copyright 2013 Abram Hindle, Eddie Antonio Santos
 # 
@@ -33,8 +34,12 @@ class MyWebServer(SocketServer.BaseRequestHandler):
         self.data = self.request.recv(1024).strip()
 	request = self.data.split()
 	print (request)
+	#path = os.getcwd()
         #print ("Got a request of: %s\n" % self.data)
-        self.request.sendall("OK")
+	#file = open(path + "/www/index.html")
+	
+        #self.request.sendall(file)
+	#self.request.sendto()
 
 if __name__ == "__main__":
     HOST, PORT = "localhost", 8080
